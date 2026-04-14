@@ -35,7 +35,7 @@
         <div class="container mx-auto max-w-7xl flex justify-between items-center">
             <h1 class="text-xl font-bold text-gray-800">家原的數位履歷</h1>
             <ul class="flex space-x-6 text-base text-gray-700 font-medium">
-                <li><a href="#about" class="hover:text-resume-green transition">關於我</a></li>
+                <li><button onclick="toggleModal('m-about')" class="hover:text-resume-green transition">關於我</button></li>
                 <li><a href="#career" class="hover:text-resume-green transition">職涯目標</a></li>
                 <li><a href="#future" class="hover:text-resume-green transition">未來計畫</a></li>
             </ul>
@@ -44,9 +44,11 @@
 
     <section id="about" class="py-24 bg-resume-yellow text-center">
         <div class="container mx-auto px-6 max-w-5xl">
-            <div class="w-40 h-40 bg-white rounded-full mx-auto mb-8 shadow-xl overflow-hidden border-4 border-white">
-                <img src="大頭照.jpg" alt="古家原投像" class="w-full h-full object-cover">
-            </div>
+            <button onclick="toggleModal('m-about')" class="group block mx-auto mb-8 focus:outline-none">
+                <div class="w-40 h-40 bg-white rounded-full shadow-xl overflow-hidden border-4 border-white group-hover:scale-105 transition-transform">
+                    <img src="大頭照.jpg" alt="古家原投像" class="w-full h-full object-cover">
+                </div>
+            </button>
             
             <h2 class="text-5xl md:text-6xl font-extrabold mb-6 leading-tight">
                 你好，我是 <span class="text-black">古家原</span>
@@ -107,6 +109,42 @@
     <footer class="py-10 bg-white text-center text-gray-400 text-sm italic">
         &copy; 2026 古家原 | 數位履歷作業專用
     </footer>
+
+    <div id="m-about" class="modal opacity-0 pointer-events-none fixed inset-0 flex items-center justify-center z-[100] px-4">
+        <div class="modal-overlay absolute inset-0 bg-black opacity-60"></div>
+        <div class="bg-white w-full max-w-2xl mx-auto rounded-3xl z-50 p-10 text-left shadow-2xl overflow-y-auto max-h-[90vh]">
+            <h4 class="text-2xl font-bold text-tag-blue mb-6 text-center border-b pb-3">關於我</h4>
+            
+            <div class="space-y-6">
+                <div>
+                    <h5 class="text-xl font-bold text-gray-800 mb-2 font-bold">📄 自我簡介</h5>
+                    <p class="text-lg text-gray-700 leading-relaxed font-medium">
+                        哈囉！我是古家原，來自靜宜資管。 <br>
+                        從高中時期開始，我就對寫程式「從無到有」的過程深深著迷。大學期間，我除了在課堂上鑽研資料庫與專案管理，更喜歡跳出舒適圈，在黑客松中體驗高強度開發的快感。
+                    </p>
+                    <p class="text-lg text-gray-700 mt-4 leading-relaxed font-medium">
+                        我對企業流程自動化也有所涉略，並取得了 ERP 證照。對我來說，軟體工程不只是寫 Code，更是用邏輯來改善生活。如果你也對網頁技術、系統設計感興趣，非常歡迎跟我一起交流、交換想法！
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-6 bg-gray-50 p-6 rounded-2xl border border-gray-100">
+                    <div>
+                        <h5 class="text-base font-bold text-tag-blue uppercase tracking-wider mb-3">📌 個人資訊</h5>
+                        <p class="text-lg font-bold text-gray-800">📞 電話</p>
+                        <p class="text-lg text-gray-600 mb-4">0909-016-932</p>
+                        <p class="text-lg font-bold text-gray-800">✉️ Email</p>
+                        <p class="text-lg text-gray-600">rt956gh@gmail.com</p>
+                    </div>
+                    <div>
+                        <p class="text-lg font-bold text-gray-800 mt-8 md:mt-9">🏠 家鄉</p>
+                        <p class="text-lg text-gray-600">新竹市 北區 舊社里</p>
+                    </div>
+                </div>
+            </div>
+
+            <button onclick="toggleModal('m-about')" class="mt-10 w-full py-4 bg-gray-100 rounded-2xl font-bold text-lg text-gray-600 hover:bg-gray-200 transition">關閉</button>
+        </div>
+    </div>
 
     <div id="m-job" class="modal opacity-0 pointer-events-none fixed inset-0 flex items-center justify-center z-[100] px-4">
         <div class="modal-overlay absolute inset-0 bg-black opacity-60"></div>
